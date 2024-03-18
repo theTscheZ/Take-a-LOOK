@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class lookTarget : MonoBehaviour
 {
-    public Color color;
+    public string color;
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +17,17 @@ public class lookTarget : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void checkResult()
+    {
+        if (this.color == RNG.colorText)
+        {
+            Debug.Log("Win");
+        }
+        else
+        {
+            Debug.Log("Not Win");
+        }
     }
 }

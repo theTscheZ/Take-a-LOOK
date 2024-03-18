@@ -20,6 +20,8 @@ public class RNG : MonoBehaviour
         "yellow"
     };
 
+    public static string colorText = "red";
+
     private lookTarget[] targets;
     public Text text;
     // Start is called before the first frame update
@@ -51,11 +53,11 @@ public class RNG : MonoBehaviour
         for (int i = 0; i < randomTargets.Count; i++)
         {
             randomTargets[i].GetComponent<Image>().color = colors[i];
-            randomTargets[i].color = colors[i];
+            randomTargets[i].color = colorTexts[i];
         }
 
         //randomize text:
-        string colorText = colorTexts[Random.Range(0, colorTexts.Length)];
+        colorText = colorTexts[Random.Range(0, colorTexts.Length)];
         text.text = "Look at " + colorText + ".";
 
     }
