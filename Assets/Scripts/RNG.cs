@@ -31,12 +31,6 @@ public class RNG : MonoBehaviour
         Randomize();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void Randomize()
     {
         //randomize colors:
@@ -52,8 +46,8 @@ public class RNG : MonoBehaviour
         }
         for (int i = 0; i < randomTargets.Count; i++)
         {
-            randomTargets[i].GetComponent<SpriteRenderer>().color = colors[i];
-            randomTargets[i].colorTexts = colorTexts[i];
+            randomTargets[i].GetComponent<SpriteRenderer>().color = colors[i % colors.Length];
+            randomTargets[i].colorTexts = colorTexts[i % colors.Length];
         }
 
         //randomize text:

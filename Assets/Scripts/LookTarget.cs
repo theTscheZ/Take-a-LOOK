@@ -5,21 +5,20 @@ using UnityEngine;
 public class LookTarget : MonoBehaviour, IGazeableObject
 {
     SpriteRenderer spriteRenderer;
-    Color originalColor;
     private Color color;
     public string colorTexts;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        originalColor = spriteRenderer.color;
     }
 
     public void gazeAction()
     {
         color = spriteRenderer.color;
-        color.a = 0.75f;
+        color.a = 0.69f;
         spriteRenderer.color = color;
+        Debug.Log("Gazed at " + colorTexts);
     }
 
     public void currentlyGazing()
@@ -28,7 +27,9 @@ public class LookTarget : MonoBehaviour, IGazeableObject
 
     public void stoppedGazing()
     {
-        spriteRenderer.color = originalColor;
+        color = spriteRenderer.color;
+        color.a = 1f;
+        spriteRenderer.color = color;
     }
 
     public float getGazeTime()
