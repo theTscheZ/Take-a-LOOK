@@ -1,64 +1,92 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Tobii.Gaming;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LookTarget3D : MonoBehaviour
 {
     public string color;
     GazeAware gazeAware = null;
     public bool isSelected = false;
-    
+    private Timer timer;
+    private Renderer renderer;
+    // private Color highlightColor;
 
     private void Awake()
     {
         gazeAware = GetComponent<GazeAware>();
-        // Debug.Log("GazeAware");
+        timer = new Timer(5f); // Timer mit einer Dauer von 5 Sekunden initialisieren
+        timer.TimerExpired += TimerExpiredHandler; // Ereignisbehandlungsmethode abonnieren
+        renderer = GetComponent<Renderer>();
+        // highlightColor = renderer.material.GetColor("_EmissionColor");
+        // highlightColor.a = 0.69f;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        timer.StartTimer();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Debug.Log(gazeAware.HasGazeFocus);
+        timer.UpdateTimer(); // Timer aktualisieren
+
+        // Überprüfe, ob der Blick auf das Objekt gerichtet ist
         if (gazeAware.HasGazeFocus)
         {
-            Selected();
+            Select();
         }
         else
         {
-            isSelected = false;
+            Deselect();
         }
     }
 
     public void checkResult()
     {
-        Debug.Log("Check Result");
-        if (this.color == RNG3D.colorText)
+        if (isSelected)
         {
-            Debug.Log("Win");
+            if (color == RNG3D.colorText)
+            {
+                Debug.Log("Gewonnen");
+            }
+            else
+            {
+                Debug.Log("Nicht gewonnen");
+            }
+            // Debug.Log("COLOR: " + this.color);
+            // Debug.Log("COLORTEXT: " + RNG3D.colorText);
+
+            GameObject.Find("RNG").GetComponent<RNG3D>().Randomize();
         }
-        else
-        {
-            Debug.Log("Not Win");
-        }
+
+        // highlightColor = renderer.material.GetColor("_EmissionColor");
+        // highlightColor.a = 0.69f;
+        isSelected = false;
     }
 
-    public virtual void Selected()
+    private void TimerExpiredHandler()
+    {
+        checkResult(); // checkResult() aufrufen, wenn der Timer abgelaufen ist
+        timer.ResetTimer();
+        timer.StartTimer();
+    }
+
+    private void Select()
     {
         if (isSelected)
         {
             return;
         }
-        isSelected = true;
+
+        // renderer.material.SetColor("_EmissionColor", highlightColor);
         
-        checkResult();
+        isSelected = true;
+    }
+    
+    private void Deselect()
+    {
+        // highlightColor.a = 1;
+        // renderer.material.SetColor("_EmissionColor", highlightColor);
+        
+        isSelected = false;
     }
 }

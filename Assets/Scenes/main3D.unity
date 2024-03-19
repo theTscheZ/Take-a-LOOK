@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 38185981}
   - component: {fileID: 38185985}
   - component: {fileID: 38185986}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,6 @@ GameObject:
   - component: {fileID: 571781083}
   - component: {fileID: 571781086}
   - component: {fileID: 571781085}
-  - component: {fileID: 571781084}
   - component: {fileID: 571781087}
   m_Layer: 5
   m_Name: timer
@@ -616,19 +615,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 97}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &571781084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571781082}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1bc2adf2177ae6448bf6f12889f1e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 5
 --- !u!114 &571781085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,7 +665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ad5294131d7de4184750e7b3c6fe9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 5
 --- !u!1 &620809466
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +948,7 @@ GameObject:
   - component: {fileID: 1449146353}
   - component: {fileID: 1449146357}
   - component: {fileID: 1449146358}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1352,7 +1337,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1574,7 +1559,7 @@ GameObject:
   - component: {fileID: 2019493162}
   - component: {fileID: 2019493166}
   - component: {fileID: 2019493167}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1752,7 +1737,7 @@ GameObject:
   - component: {fileID: 2056813028}
   - component: {fileID: 2056813032}
   - component: {fileID: 2056813033}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plane (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
