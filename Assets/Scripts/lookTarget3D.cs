@@ -8,6 +8,7 @@ public class LookTarget3D : MonoBehaviour
     public bool isSelected = false;
     private Timer timer;
     private Renderer renderer;
+    private Color originalColor;
     // private Color highlightColor;
 
     private void Awake()
@@ -79,13 +80,29 @@ public class LookTarget3D : MonoBehaviour
 
         // renderer.material.SetColor("_EmissionColor", highlightColor);
         
+        originalColor = renderer.material.GetColor("_EmissionColor");
+        originalColor.r += 0.3f; // Beispiel für eine Änderung der roten Komponente
+        originalColor.g += 0.3f; // Beispiel für eine Änderung der grünen Komponente
+        originalColor.b += 0.3f; // Beispiel für eine Änderung der blauen Komponente
+        renderer.material.SetColor("_EmissionColor", originalColor);
+        
         isSelected = true;
     }
     
     private void Deselect()
     {
+        if (!isSelected)
+        {
+            return;
+        }
+        
         // highlightColor.a = 1;
         // renderer.material.SetColor("_EmissionColor", highlightColor);
+        
+        originalColor.r -= 0.3f; // Beispiel für eine Änderung der roten Komponente
+        originalColor.g -= 0.3f; // Beispiel für eine Änderung der grünen Komponente
+        originalColor.b -= 0.3f; // Beispiel für eine Änderung der blauen Komponente
+        renderer.material.SetColor("_EmissionColor", originalColor);
         
         isSelected = false;
     }
