@@ -5,7 +5,7 @@ using Tobii.Gaming;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class lookTarget3D : MonoBehaviour
+public class LookTarget3D : MonoBehaviour
 {
     public string color;
     GazeAware gazeAware = null;
@@ -15,7 +15,7 @@ public class lookTarget3D : MonoBehaviour
     private void Awake()
     {
         gazeAware = GetComponent<GazeAware>();
-        Debug.Log("GazeAware");
+        // Debug.Log("GazeAware");
     }
 
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class lookTarget3D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gazeAware.HasGazeFocus);
+        // Debug.Log(gazeAware.HasGazeFocus);
         if (gazeAware.HasGazeFocus)
         {
             Selected();
@@ -41,14 +41,14 @@ public class lookTarget3D : MonoBehaviour
     public void checkResult()
     {
         Debug.Log("Check Result");
-        // if (this.color == RNG3D.colorText)
-        // {
-        //     Debug.Log("Win");
-        // }
-        // else
-        // {
-        //     Debug.Log("Not Win");
-        // }
+        if (this.color == RNG3D.colorText)
+        {
+            Debug.Log("Win");
+        }
+        else
+        {
+            Debug.Log("Not Win");
+        }
     }
 
     public virtual void Selected()

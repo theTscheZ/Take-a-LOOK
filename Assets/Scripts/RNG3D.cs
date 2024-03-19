@@ -22,12 +22,12 @@ public class RNG3D : MonoBehaviour
 
     public static string colorText = "red";
 
-    private lookTarget3D[] targets;
+    private LookTarget3D[] targets;
     public Text text;
     // Start is called before the first frame update
     void Start()
     {
-        targets = FindObjectsOfType(typeof(lookTarget3D)) as lookTarget3D[];
+        targets = FindObjectsOfType(typeof(LookTarget3D)) as LookTarget3D[];
         Randomize();
     }
 
@@ -41,8 +41,8 @@ public class RNG3D : MonoBehaviour
     public void Randomize()
     {
         //randomize colors:
-        List<lookTarget3D> randomTargets = new List<lookTarget3D>();
-        lookTarget3D randomTarget = targets[Random.Range(0, targets.Length)];
+        List<LookTarget3D> randomTargets = new List<LookTarget3D>();
+        LookTarget3D randomTarget = targets[Random.Range(0, targets.Length)];
         for (int i = 0; i < targets.Length; i++)
         {
             while (randomTargets.Contains(randomTarget))
