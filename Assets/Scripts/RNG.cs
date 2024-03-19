@@ -22,12 +22,12 @@ public class RNG : MonoBehaviour
 
     public static string colorText = "red";
 
-    private LookTarget[] targets;
+    private lookTarget[] targets;
     public Text text;
     // Start is called before the first frame update
     void Start()
     {
-        targets = FindObjectsOfType(typeof(LookTarget)) as LookTarget[];
+        targets = FindObjectsOfType(typeof(lookTarget)) as lookTarget[];
         Randomize();
     }
 
@@ -40,8 +40,8 @@ public class RNG : MonoBehaviour
     public void Randomize()
     {
         //randomize colors:
-        List<LookTarget> randomTargets = new List<LookTarget>();
-        LookTarget randomTarget = targets[Random.Range(0, targets.Length)];
+        List<lookTarget> randomTargets = new List<lookTarget>();
+        lookTarget randomTarget = targets[Random.Range(0, targets.Length)];
         for (int i = 0; i < targets.Length; i++)
         {
             while (randomTargets.Contains(randomTarget))
