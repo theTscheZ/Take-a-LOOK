@@ -1,19 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RNG : MonoBehaviour
 {
-    private Color[] colors = {
+    private Color[] colors =
+    {
         Color.red,
         Color.blue,
         Color.green,
         Color.yellow
     };
 
-    private string[] colorTexts = {
+    private string[] colorTexts =
+    {
         "red",
         "blue",
         "green",
@@ -23,18 +23,14 @@ public class RNG : MonoBehaviour
     public static string colorText = "red";
 
     private LookTarget[] targets;
+
     public Text text;
+
     // Start is called before the first frame update
     void Start()
     {
         targets = FindObjectsOfType(typeof(LookTarget)) as LookTarget[];
         Randomize();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void Randomize()
@@ -48,17 +44,18 @@ public class RNG : MonoBehaviour
             {
                 randomTarget = targets[Random.Range(0, targets.Length)];
             }
+
             randomTargets.Add(randomTarget);
         }
+
         for (int i = 0; i < randomTargets.Count; i++)
         {
-            randomTargets[i].GetComponent<Image>().color = colors[i];
+            randomTargets[i].GetComponent<Renderer>().material.SetColor("_EmissionColor", colors[i]);
             randomTargets[i].color = colorTexts[i];
         }
 
         //randomize text:
         colorText = colorTexts[Random.Range(0, colorTexts.Length)];
         text.text = "Look at " + colorText + ".";
-
     }
 }

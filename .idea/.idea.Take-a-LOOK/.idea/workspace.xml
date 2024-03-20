@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2e6e230-25c2-4623-bfe7-476ae270c7a4" name="Changes" comment="" />
+    <list default="true" id="b2e6e230-25c2-4623-bfe7-476ae270c7a4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Take-a-LOOK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Take-a-LOOK/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LookTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LookTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RNG.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RNG.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RNG3D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RNG3D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timer3D.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timer3D.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/lookTarget3D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/lookTarget3D.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,6 +110,7 @@
       <workItem from="1710777158522" duration="9144000" />
       <workItem from="1710848765609" duration="9402000" />
       <workItem from="1710948465632" duration="1469000" />
+      <workItem from="1710950020676" duration="1884000" />
     </task>
     <servers />
   </component>

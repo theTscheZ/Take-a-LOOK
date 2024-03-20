@@ -1,27 +1,26 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Timer
+public class Timer : MonoBehaviour
 {
-    public event Action TimerExpired; // Ereignis für Timerablauf
-    public event Action TimerUpdated; // Ereignis für Timeraktualisierung
     public float duration = 5;
-    private float elapsedTime;
-    private bool isRunning;
-
-    public Timer(float duration)
+    private float elapsedTime = 0;
+    private bool isRunning = false;
+    private Image image;
+    private float timeRemaining = 0;
+    
+    private void Awake()
     {
-        this.duration = duration;
-        this.elapsedTime = 0f;
-        this.isRunning = false;
+        image = GetComponent<Image>();
     }
 
-    public void StartTimer()
+    public void Start()
     {
         isRunning = true;
     }
 
-    public void UpdateTimer()
+    private void Update()
     {
         if (isRunning)
         {
@@ -29,16 +28,12 @@ public class Timer
             if (elapsedTime >= duration)
             {
                 isRunning = false;
-                if (TimerExpired != null)
-                {
-                    TimerExpired(); // Ereignis auslösen
-                }
+                // ResetTimer();
+                StartTimer();
             }
 
-            if (TimerUpdated != null)
-            {
-                TimerUpdated(); // Ereignis auslösen
-            }
+            timeRemaining = duration - elapsedTime;
+            image.fillAmount = timeRemaining / duration;
         }
     }
 
@@ -48,14 +43,10 @@ public class Timer
         isRunning = false;
     }
 
-    // getter for elapsedTime and duration
-    public float getElapsedTime()
+    public void StartTimer()
     {
-        return elapsedTime;
-    }
-
-    public float getDuration()
-    {
-        return duration;
+        elapsedTime = 0f;
+        isRunning = true;
+        GameObject.Find("RNG").GetComponent<RNG>().Randomize();
     }
 }
