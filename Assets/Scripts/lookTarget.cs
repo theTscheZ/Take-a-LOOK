@@ -48,7 +48,7 @@ public class LookTarget : MonoBehaviour
             // Debug.Log("COLOR: " + this.color);
             // Debug.Log("COLORTEXT: " + RNG3D.colorText);
             // timer.ResetTimer();
-            timer.StartTimer();
+            timer.ResetTimer();
         }
         isSelected = false;
     }

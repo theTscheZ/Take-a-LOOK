@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     private bool isRunning = false;
     private Image image;
     private float timeRemaining = 0;
-    
+
     private void Awake()
     {
         image = GetComponent<Image>();
@@ -28,8 +28,8 @@ public class Timer : MonoBehaviour
             if (elapsedTime >= duration)
             {
                 isRunning = false;
-                // ResetTimer();
-                StartTimer();
+                ResetTimer();
+                // StartTimer();
             }
 
             timeRemaining = duration - elapsedTime;
@@ -41,6 +41,11 @@ public class Timer : MonoBehaviour
     {
         elapsedTime = 0f;
         isRunning = false;
+        // Show Win Screen
+        GameObject myPrefab = Resources.Load("winscreen") as GameObject;
+        Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.Euler(90, 180, 0));
+        //Timer
+        //StartTimer();
     }
 
     public void StartTimer()
