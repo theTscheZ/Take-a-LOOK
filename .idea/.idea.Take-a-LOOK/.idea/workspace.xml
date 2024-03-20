@@ -7,7 +7,6 @@
     <list default="true" id="b2e6e230-25c2-4623-bfe7-476ae270c7a4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Take-a-LOOK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Take-a-LOOK/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/main3D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main3D.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LookTarget3D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LookTarget3D.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,8 @@
       <workItem from="1710749045790" duration="559000" />
       <workItem from="1710776935904" duration="159000" />
       <workItem from="1710777158522" duration="9144000" />
-      <workItem from="1710848765609" duration="9224000" />
+      <workItem from="1710848765609" duration="9402000" />
+      <workItem from="1710948465632" duration="1408000" />
     </task>
     <servers />
   </component>

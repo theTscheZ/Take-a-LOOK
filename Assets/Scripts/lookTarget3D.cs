@@ -9,7 +9,6 @@ public class LookTarget3D : MonoBehaviour
     private Timer timer;
     private Renderer renderer;
     private Color originalColor;
-    // private Color highlightColor;
 
     private void Awake()
     {
@@ -17,8 +16,6 @@ public class LookTarget3D : MonoBehaviour
         timer = new Timer(5f); // Timer mit einer Dauer von 5 Sekunden initialisieren
         timer.TimerExpired += TimerExpiredHandler; // Ereignisbehandlungsmethode abonnieren
         renderer = GetComponent<Renderer>();
-        // highlightColor = renderer.material.GetColor("_EmissionColor");
-        // highlightColor.a = 0.69f;
     }
 
     void Start()
@@ -37,12 +34,14 @@ public class LookTarget3D : MonoBehaviour
         }
         else
         {
+            // Debug.Log("no GazeAware");
             Deselect();
         }
     }
 
     public void checkResult()
     {
+        Debug.Log("isSelected: " + isSelected);
         if (isSelected)
         {
             if (color == RNG3D.colorText)
@@ -53,14 +52,10 @@ public class LookTarget3D : MonoBehaviour
             {
                 Debug.Log("Nicht gewonnen");
             }
-            // Debug.Log("COLOR: " + this.color);
-            // Debug.Log("COLORTEXT: " + RNG3D.colorText);
-
-            GameObject.Find("RNG").GetComponent<RNG3D>().Randomize();
+            Debug.Log("COLOR: " + this.color);
+            Debug.Log("COLORTEXT: " + RNG3D.colorText);
         }
-
-        // highlightColor = renderer.material.GetColor("_EmissionColor");
-        // highlightColor.a = 0.69f;
+        GameObject.Find("RNG").GetComponent<RNG3D>().Randomize();
         isSelected = false;
     }
 
@@ -77,13 +72,11 @@ public class LookTarget3D : MonoBehaviour
         {
             return;
         }
-
-        // renderer.material.SetColor("_EmissionColor", highlightColor);
         
         originalColor = renderer.material.GetColor("_EmissionColor");
-        originalColor.r += 0.3f; // Beispiel für eine Änderung der roten Komponente
-        originalColor.g += 0.3f; // Beispiel für eine Änderung der grünen Komponente
-        originalColor.b += 0.3f; // Beispiel für eine Änderung der blauen Komponente
+        originalColor.r += 0.3f;
+        originalColor.g += 0.3f; 
+        originalColor.b += 0.3f; 
         renderer.material.SetColor("_EmissionColor", originalColor);
         
         isSelected = true;
@@ -96,12 +89,9 @@ public class LookTarget3D : MonoBehaviour
             return;
         }
         
-        // highlightColor.a = 1;
-        // renderer.material.SetColor("_EmissionColor", highlightColor);
-        
-        originalColor.r -= 0.3f; // Beispiel für eine Änderung der roten Komponente
-        originalColor.g -= 0.3f; // Beispiel für eine Änderung der grünen Komponente
-        originalColor.b -= 0.3f; // Beispiel für eine Änderung der blauen Komponente
+        originalColor.r -= 0.3f; 
+        originalColor.g -= 0.3f; 
+        originalColor.b -= 0.3f;
         renderer.material.SetColor("_EmissionColor", originalColor);
         
         isSelected = false;
