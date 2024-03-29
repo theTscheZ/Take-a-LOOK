@@ -1,5 +1,6 @@
 using Tobii.Gaming;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LookTarget : MonoBehaviour
 {
@@ -40,10 +41,24 @@ public class LookTarget : MonoBehaviour
             if (color == RNG.colorText)
             {
                 Debug.Log("Gewonnen");
+                stats.score++;
+                Text scoreText = GameObject.Find("scoreText").GetComponent<Text>();
+                scoreText.text = "Score: " + stats.score;
+                // Show Win Screen
+                GameObject canvas = GameObject.Find("Canvas");
+                GameObject myPrefab = Resources.Load("winscreen") as GameObject;
+                Instantiate(myPrefab, canvas.transform);
             }
             else
             {
                 Debug.Log("Nicht gewonnen");
+                stats.health--;
+                Text healthText = GameObject.Find("healthText").GetComponent<Text>();
+                healthText.text = "Health: " + stats.health;
+                // Show Lose Screen
+                GameObject canvas = GameObject.Find("Canvas");
+                GameObject myPrefab = Resources.Load("winscreen") as GameObject; //!!!replace with loose screen!!!
+                Instantiate(myPrefab, canvas.transform);
             }
             // Debug.Log("COLOR: " + this.color);
             // Debug.Log("COLORTEXT: " + RNG3D.colorText);

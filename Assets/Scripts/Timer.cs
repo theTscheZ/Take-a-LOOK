@@ -29,21 +29,27 @@ public class Timer : MonoBehaviour
             {
                 isRunning = false;
                 ResetTimer();
+
+                stats.health--;
+                Text healthText = GameObject.Find("healthText").GetComponent<Text>();
+                healthText.text = "Health: " + stats.health;
+                // Show Lose Screen
+                GameObject canvas = GameObject.Find("Canvas");
+                GameObject myPrefab = Resources.Load("winscreen") as GameObject; //!!!replace with loose screen!!!
+                Instantiate(myPrefab, canvas.transform);
                 // StartTimer();
             }
 
             timeRemaining = duration - elapsedTime;
             image.fillAmount = timeRemaining / duration;
         }
+
     }
 
     public void ResetTimer()
     {
         elapsedTime = 0f;
         isRunning = false;
-        // Show Win Screen
-        GameObject myPrefab = Resources.Load("winscreen") as GameObject;
-        Instantiate(myPrefab, new Vector3(0, 0, 0), Quaternion.Euler(90, 180, 0));
         //Timer
         //StartTimer();
     }
