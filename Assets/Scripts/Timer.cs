@@ -30,9 +30,9 @@ public class Timer : MonoBehaviour
                 isRunning = false;
                 ResetTimer();
 
-                stats.health--;
+                Stats.health--;
                 Text healthText = GameObject.Find("healthText").GetComponent<Text>();
-                healthText.text = "Health: " + stats.health;
+                healthText.text = "Health: " + Stats.health;
                 // Show Lose Screen
                 GameObject canvas = GameObject.Find("Canvas");
                 GameObject myPrefab = Resources.Load("winscreen") as GameObject; //!!!replace with loose screen!!!
