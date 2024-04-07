@@ -6,4 +6,5 @@ public static class Stats
 {
     public static int health = 3;
     public static int score = 0;
+    public static bool objectiveTruth = true;
 }

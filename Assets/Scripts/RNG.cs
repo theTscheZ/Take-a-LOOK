@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class RNG : MonoBehaviour
 {
+    public int[] difficultyMilestones = { 5, 10, 15 };
     private Color[] colors =
     {
         Color.red,
@@ -24,7 +25,8 @@ public class RNG : MonoBehaviour
 
     private LookTarget[] targets;
 
-    public Text text;
+    public Text objectiveText;
+    public Text objectiveTextColor;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +57,60 @@ public class RNG : MonoBehaviour
         }
 
         //randomize text:
-        colorText = colorTexts[Random.Range(0, colorTexts.Length)];
-        text.text = "Look at " + colorText + ".";
+        int randomInt = Random.Range(0, colorTexts.Length);
+        colorText = colorTexts[randomInt];
+        objectiveText.text = "Look at";
+        objectiveTextColor.text = colorText;
+        if (Stats.score >= difficultyMilestones[0])
+        {
+            objectiveTextColor.color = colors[Random.Range(0, colorTexts.Length)];
+        }
+        else
+        {
+            objectiveTextColor.color = colors[randomInt];
+        }
+        if (Stats.score >= difficultyMilestones[1])
+        {
+            Stats.objectiveTruth = Random.Range(0, 2) == 0;
+            if (Stats.objectiveTruth)
+            {
+                if (Stats.score >= difficultyMilestones[2])
+                {
+                    int rando = Random.Range(0, 3);
+                    objectiveText.text = rando switch
+                    {
+                        0 => "Do look at",
+                        1 => "Don't not look at",
+                        _ => "Look at",
+                    };
+                }
+                else
+                {
+                    objectiveText.text = "Look at";
+                }
+            }
+            else
+            {
+                if (Stats.score >= difficultyMilestones[2])
+                {
+                    int rando = Random.Range(0, 2);
+                    objectiveText.text = rando switch
+                    {
+                        0 => "Do not look at",
+                        _ => "Don't look at",
+                    };
+                }
+                else
+                {
+                    objectiveText.text = "Don't look at";
+                }
+            }
+
+        }
+        else
+        {
+            Stats.objectiveTruth = true;
+            objectiveText.text = "Look at";
+        }
     }
 }

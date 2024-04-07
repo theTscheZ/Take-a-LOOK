@@ -45,7 +45,7 @@ public class LookTarget : MonoBehaviour
         // Debug.Log("isSelected: " + isSelected);
         if (isSelected)
         {
-            if (color == RNG.colorText)
+            if (color == RNG.colorText == Stats.objectiveTruth)
             {
                 Debug.Log("Gewonnen");
                 Stats.score++;
@@ -67,7 +67,7 @@ public class LookTarget : MonoBehaviour
                 GameObject canvas = GameObject.Find("Canvas");
                 GameObject myPrefab = Resources.Load("winscreen") as GameObject; //!!!replace with loose screen!!!
                 Instantiate(myPrefab, canvas.transform);
-                
+
             }
             // Debug.Log("COLOR: " + this.color);
             // Debug.Log("COLORTEXT: " + RNG3D.colorText);
@@ -106,12 +106,12 @@ public class LookTarget : MonoBehaviour
         {
             return;
         }
-    
+
         // originalColor.r -= 0.3f;
         // originalColor.g -= 0.3f;
         // originalColor.b -= 0.3f;
         // renderer.material.SetColor("_EmissionColor", originalColor);
-    
+
         isSelected = false;
     }
 }
