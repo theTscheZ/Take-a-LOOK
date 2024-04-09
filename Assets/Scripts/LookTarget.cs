@@ -8,15 +8,21 @@ public class LookTarget : MonoBehaviour
     GazeAware gazeAware = null;
     public bool isSelected = false;
     private Timer timer;
-    private Renderer renderer;
+    // private Renderer renderer;
     private Color originalColor;
     private float selectionTimer = 0.2f;
+    private Sprite eyesOpen;
+    private Sprite eyesClosed;
+    private SpriteRenderer eyes;
 
     private void Awake()
     {
         gazeAware = GetComponent<GazeAware>();
         timer = GameObject.Find("Timer").GetComponent<Timer>();
-        renderer = GetComponent<Renderer>();
+        // renderer = GetComponent<Renderer>();
+        eyesClosed = Resources.Load("Images/Virtual_Youtuber_anime_girls_anime_fan_art_blue_hair_Side_ponytail_hair_bows_hair_accessories-1827803", typeof(Sprite)) as Sprite;
+        eyesOpen = Resources.Load("Images/Illuminati_triangle_eye", typeof(Sprite)) as Sprite;
+        eyes = this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -24,6 +30,7 @@ public class LookTarget : MonoBehaviour
         // Überprüfe, ob der Blick auf das Objekt gerichtet ist
         if (gazeAware.HasGazeFocus)
         {
+            eyes.sprite = eyesOpen;
             selectionTimer -= Time.deltaTime;
             if (selectionTimer <= 0)
             {
@@ -33,6 +40,7 @@ public class LookTarget : MonoBehaviour
         }
         else
         {
+            eyes.sprite = eyesClosed;
             // Debug.Log("no GazeAware");
             Deselect();
             selectionTimer = 0.2f;

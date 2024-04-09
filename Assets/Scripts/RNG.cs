@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class RNG : MonoBehaviour
 {
+    [SerializeField] private Timer timer;
     public int[] difficultyMilestones = { 5, 10, 15 };
     private Color[] colors =
     {
@@ -64,6 +65,7 @@ public class RNG : MonoBehaviour
         if (Stats.score >= difficultyMilestones[0])
         {
             objectiveTextColor.color = colors[Random.Range(0, colorTexts.Length)];
+            timer.duration = 2.5f;
         }
         else
         {
@@ -71,6 +73,7 @@ public class RNG : MonoBehaviour
         }
         if (Stats.score >= difficultyMilestones[1])
         {
+            timer.duration = 2f;
             Stats.objectiveTruth = Random.Range(0, 2) == 0;
             if (Stats.objectiveTruth)
             {
