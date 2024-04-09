@@ -65,7 +65,7 @@ public class LookTarget : MonoBehaviour
                 healthText.text = "Health: " + Stats.health;
                 // Show Lose Screen
                 GameObject canvas = GameObject.Find("Canvas");
-                GameObject myPrefab = Resources.Load("winscreen") as GameObject; //!!!replace with loose screen!!!
+                GameObject myPrefab = Resources.Load("losescreen") as GameObject;
                 Instantiate(myPrefab, canvas.transform);
 
             }

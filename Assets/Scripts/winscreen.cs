@@ -25,8 +25,9 @@ public class winscreen : MonoBehaviour
                 timer.StartTimer();
                 threeD.SetActive(true);
             }else{
-                Text replaceThisWithABetterGameoverScreenOrSomething = GameObject.Find("objectiveText").GetComponent<Text>();
-                replaceThisWithABetterGameoverScreenOrSomething.text = "GAME OVER";
+                GameObject canvas = GameObject.Find("Canvas");
+                GameObject myPrefab = Resources.Load("gameoverscreen") as GameObject;
+                Instantiate(myPrefab, canvas.transform);
             }
             Destroy(this.gameObject);
         }
