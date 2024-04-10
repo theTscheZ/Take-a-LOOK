@@ -20,8 +20,8 @@ public class LookTarget : MonoBehaviour
         gazeAware = GetComponent<GazeAware>();
         timer = GameObject.Find("Timer").GetComponent<Timer>();
         // renderer = GetComponent<Renderer>();
-        eyesClosed = Resources.Load("Images/Virtual_Youtuber_anime_girls_anime_fan_art_blue_hair_Side_ponytail_hair_bows_hair_accessories-1827803", typeof(Sprite)) as Sprite;
-        eyesOpen = Resources.Load("Images/Illuminati_triangle_eye", typeof(Sprite)) as Sprite;
+        eyesClosed = Resources.Load("Images/Eye_Closed", typeof(Sprite)) as Sprite;
+        eyesOpen = Resources.Load("Images/Eye_Open", typeof(Sprite)) as Sprite;
         eyes = this.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
