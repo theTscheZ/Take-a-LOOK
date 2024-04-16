@@ -35,7 +35,7 @@ public class Timer : MonoBehaviour
                 healthText.text = "Health: " + Stats.health;
                 // Show Lose Screen
                 GameObject canvas = GameObject.Find("Canvas");
-                GameObject myPrefab = Resources.Load("losescreen") as GameObject;
+                GameObject myPrefab = Resources.Load("losescreen2") as GameObject;
                 Instantiate(myPrefab, canvas.transform);
                 // StartTimer();
             }
