@@ -35,7 +35,9 @@ public class winscreen : MonoBehaviour
                 {
                     gazeAware.enabled = true;
                 }
-            }else{
+            }
+            else
+            {
                 GameObject canvas = GameObject.Find("Canvas");
                 GameObject myPrefab = Resources.Load("gameoverscreen") as GameObject;
                 Instantiate(myPrefab, canvas.transform);

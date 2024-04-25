@@ -69,8 +69,8 @@ public class LookTarget : MonoBehaviour
             {
                 Debug.Log("Nicht gewonnen");
                 Stats.health--;
-                Text healthText = GameObject.Find("healthText").GetComponent<Text>();
-                healthText.text = "Health: " + Stats.health;
+                Slider healthSlider = GameObject.Find("healthSlider").GetComponent<Slider>();
+                healthSlider.value = Stats.health;
                 // Show Lose Screen
                 GameObject canvas = GameObject.Find("Canvas");
                 GameObject myPrefab = Resources.Load("losescreen") as GameObject;
