@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b2e6e230-25c2-4623-bfe7-476ae270c7a4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Take-a-LOOK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Take-a-LOOK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/gameoverscreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/gameoverscreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/main3D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/main3D.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Timer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/winscreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/winscreen.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +52,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds\Take-a-LOOK.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\theTscheZ\Documents\Unity Projects\Take-a-LOOK\Builds" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.15f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;C:\Users\theTscheZ\Documents\Unity Projects\Take-a-LOOK&quot; -debugCodeOptimization" />
@@ -110,7 +114,9 @@
       <workItem from="1712143108703" duration="4028000" />
       <workItem from="1712660058846" duration="2167000" />
       <workItem from="1712662783639" duration="212000" />
-      <workItem from="1713260222476" duration="1093000" />
+      <workItem from="1713260222476" duration="1688000" />
+      <workItem from="1713974203032" duration="709000" />
+      <workItem from="1714377317478" duration="93000" />
     </task>
     <servers />
   </component>
